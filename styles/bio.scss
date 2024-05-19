@@ -1,5 +1,6 @@
 @use "./partials/variables" as *;
 @use "./partials/globals" as *;
+@use "./partials/mixins" as *;
 
 * {
   margin: 0;
@@ -38,42 +39,62 @@
   }
 }
 
-.hero__img {
-  img {
-    width: 100vw;
-    height: 36vh;
-    object-fit: cover;
+.hero {
+  position: relative;
+  height: 25vh;
+  background: 
+  linear-gradient(
+    rgba(50, 50, 50, 0.5),
+    rgba(50, 50, 50, 0.5)
+  ), url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  &__title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 1rem;
+  }
+  &__img {
+    img {
+      width: 100vw;
+      height: 25vh;
+      object-fit: cover;
+    }
   }
 }
-
 .about {
-  padding: 0 24px;
+  padding: 0 1.5rem;
+
+  @include tablet {
+  }
 
   &__title {
-    padding: 24px 0 16px 0;
+    padding: 1.25rem 0 1rem 0;
   }
 
   &__image {
     img {
-      height: 21.875rem;
+      height: 18rem;
       width: 100%;
       object-fit: cover;
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
     }
   }
 
   &__quote {
     color: $bandsite-black;
     font-family: "Avenir Next Demi";
-    line-height: 30px;
-    margin-bottom: 24px;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.65em;
   }
   &__band__name {
-    padding: 16px 0 24px 0;
+    padding: 1.25rem 0 1.25rem 0;
   }
 
   &__paragraph {
-    margin-bottom: 16px;
+    margin-bottom: 0.67em;
   }
 }
 
@@ -81,19 +102,18 @@
   background: $alabaster;
   display: flex;
   flex-direction: column;
-  padding: 1.5em;
+  padding: 1em 1.25em;
   &__title {
-    padding: 24px 0 16px 0;
+    padding: 1.25rem 0 1rem 0;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1.25rem;
   }
 
   &__img {
-    margin-bottom: 1rem;
 
     &:last-child {
       margin-bottom: 0;
@@ -105,7 +125,7 @@
   height: 100%;
   background: $bandsite-black;
   color: $white;
-  padding: 0 1.5rem 3rem 1.5rem ;
+  padding: 0 1.5rem 3rem 1.5rem;
   display: flex;
   flex-direction: column;
 

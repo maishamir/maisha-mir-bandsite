@@ -28,11 +28,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.34rem;
+  font-size: 1.04rem;
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1.5rem;
 }
 
@@ -69,55 +69,66 @@ p {
   text-align: center;
 }
 
+.hero {
+  position: relative;
+  height: 25vh;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+}
+.hero__title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  padding: 1rem;
+}
 .hero__img img {
   width: 100vw;
-  height: 36vh;
+  height: 25vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .about {
-  padding: 0 24px;
+  padding: 0 1.5rem;
 }
 .about__title {
-  padding: 24px 0 16px 0;
+  padding: 1.25rem 0 1rem 0;
 }
 .about__image img {
-  height: 21.875rem;
+  height: 18rem;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 .about__quote {
   color: #323232;
   font-family: "Avenir Next Demi";
-  line-height: 30px;
-  margin-bottom: 24px;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.65em;
 }
 .about__band__name {
-  padding: 16px 0 24px 0;
+  padding: 1.25rem 0 1.25rem 0;
 }
 .about__paragraph {
-  margin-bottom: 16px;
+  margin-bottom: 0.67em;
 }
 
 .gallery {
   background: #FAFAFA;
   display: flex;
   flex-direction: column;
-  padding: 1.5em;
+  padding: 1em 1.25em;
 }
 .gallery__title {
-  padding: 24px 0 16px 0;
+  padding: 1.25rem 0 1rem 0;
 }
 .gallery__container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-.gallery__img {
-  margin-bottom: 1rem;
+  gap: 1.25rem;
 }
 .gallery__img:last-child {
   margin-bottom: 0;
