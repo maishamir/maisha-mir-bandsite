@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em;
+  padding-top: 1.25em;
   text-align: center;
 
   &__nav__list {
@@ -26,6 +26,18 @@
   &__item {
     width: 50%;
     color: $mercury;
+    padding: 1em;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      border-color: white;
+    }
+
+    a:active {
+      font-family: "Avenir Next Demi";
+    }
   }
 
   &__logo {
@@ -42,11 +54,8 @@
 .hero {
   position: relative;
   height: 25vh;
-  background: 
-  linear-gradient(
-    rgba(50, 50, 50, 0.5),
-    rgba(50, 50, 50, 0.5)
-  ), url(../assets/images/hero-bio.jpg);
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url(../assets/images/hero-bio.jpg);
   background-size: cover;
   &__title {
     position: absolute;
@@ -75,7 +84,7 @@
 
   &__image {
     img {
-      height: 18rem;
+      height: 16rem;
       width: 100%;
       object-fit: cover;
       margin-bottom: 1rem;
@@ -114,7 +123,6 @@
   }
 
   &__img {
-
     &:last-child {
       margin-bottom: 0;
     }
@@ -122,7 +130,7 @@
 }
 
 .footer {
-  height: 100%;
+  height: 75vh;
   background: $bandsite-black;
   color: $white;
   padding: 0 1.5rem 3rem 1.5rem;
@@ -142,6 +150,7 @@
 
   &__icons {
     display: flex;
+    min-width: 30%;
     width: 40%;
     padding: 1.25rem 0 1rem 0;
     justify-content: space-between;
@@ -151,7 +160,7 @@
   }
 
   &-cpyrght {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -161,7 +170,7 @@
   flex-direction: column;
   justify-content: space-between;
   &__container {
-    height: 55vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
