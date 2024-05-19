@@ -18,22 +18,23 @@
 }
 html {
   font-family: "Avenir Next Regular";
-  font-size: 24px;
+  font-size: 14px;
 }
 
 h1 {
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   color: #323232;
   font-family: "Avenir Next Demi";
 }
 
 h2 {
-  font-size: 1.04rem;
+  font-size: 1.07rem;
+  font-family: "Avenir Next Demi";
 }
 
 p {
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.38rem;
 }
 
 a {
@@ -55,11 +56,21 @@ a {
   padding-top: 1.25em;
   text-align: center;
 }
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+}
 .header__nav__list {
   display: flex;
   list-style-type: none;
   justify-content: space-evenly;
   width: 100vw;
+}
+@media (min-width: 768px) {
+  .header__nav__list {
+    width: 50vw;
+  }
 }
 .header__item {
   width: 50%;
@@ -111,17 +122,17 @@ a {
   padding: 1.25rem 0 1rem 0;
 }
 .about__image img {
-  height: 16rem;
+  height: 13rem;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
   margin-bottom: 1rem;
 }
 .about__quote {
   color: #323232;
   font-family: "Avenir Next Demi";
-  margin-bottom: 1rem;
   font-size: 1.25rem;
+  margin-bottom: 1rem;
   line-height: 1.65em;
 }
 .about__band__name {
@@ -150,7 +161,7 @@ a {
 }
 
 .footer {
-  height: 75vh;
+  height: 85vh;
   background: #323232;
   color: #FFFFFF;
   padding: 0 1.5rem 3rem 1.5rem;
@@ -169,30 +180,30 @@ a {
 .footer__icons {
   display: flex;
   min-width: 30%;
-  width: 40%;
-  padding: 1.25rem 0 1rem 0;
+  width: 35%;
+  padding: 1.25rem 0 0rem 0;
   justify-content: space-between;
 }
 .footer__icons img {
   height: 2rem;
 }
-.footer-cpyrght {
-  font-size: 1.1rem;
-}
 
 .company {
-  height: 25%;
+  height: 23%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .company__container {
-  height: 100%;
+  height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-bottom: 2rem;
 }
 .company__name {
   font-family: "Avenir Next Demi";
+}
+.company-cpyrght {
+  font-size: 0.875em;
 }/*# sourceMappingURL=bio.css.map */

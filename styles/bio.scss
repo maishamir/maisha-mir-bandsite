@@ -16,11 +16,18 @@
   padding-top: 1.25em;
   text-align: center;
 
+  @include tablet {
+    flex-direction: row;
+  }
   &__nav__list {
     display: flex;
     list-style-type: none;
     justify-content: space-evenly;
     width: 100vw;
+
+    @include tablet {
+      width: 50vw;
+    }
   }
 
   &__item {
@@ -84,9 +91,9 @@
 
   &__image {
     img {
-      height: 16rem;
+      height: 13rem;
       width: 100%;
-      object-fit: cover;
+      object-fit: fill;
       margin-bottom: 1rem;
     }
   }
@@ -94,8 +101,8 @@
   &__quote {
     color: $bandsite-black;
     font-family: "Avenir Next Demi";
-    margin-bottom: 1rem;
     font-size: 1.25rem;
+    margin-bottom: 1rem;
     line-height: 1.65em;
   }
   &__band__name {
@@ -130,7 +137,7 @@
 }
 
 .footer {
-  height: 75vh;
+  height: 85vh;
   background: $bandsite-black;
   color: $white;
   padding: 0 1.5rem 3rem 1.5rem;
@@ -151,33 +158,33 @@
   &__icons {
     display: flex;
     min-width: 30%;
-    width: 40%;
-    padding: 1.25rem 0 1rem 0;
+    width: 35%;
+    padding: 1.25rem 0 0rem 0;
     justify-content: space-between;
     img {
       height: 2rem;
     }
   }
-
-  &-cpyrght {
-    font-size: 1.1rem;
-  }
 }
 
 .company {
-  height: 25%;
+  height: 23%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   &__container {
-    height: 100%;
+    height: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-bottom: 2rem;
   }
 
   &__name {
     font-family: "Avenir Next Demi";
+  }
+
+  &-cpyrght {
+    font-size: 0.875em;
   }
 }

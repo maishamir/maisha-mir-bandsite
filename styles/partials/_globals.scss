@@ -3,31 +3,27 @@
 
 html {
   font-family: "Avenir Next Regular";
-  font-size: 24px;
+  font-size: 14px;
 }
 
 // MOBILE TEXT STYLES
 
 h1 {
-  font-size: 2.3rem;  
+  font-size: 1.8rem;  
   color: $bandsite-black;
   font-family: "Avenir Next Demi";
 }
 
 h2 {
-  font-size: 1.04rem;
+  font-size: 1.07rem; //og 14px
+  font-family: "Avenir Next Demi";
 }
 
 p {
-  font-size: 1rem;
-  line-height: 1.5rem; //36px
+  font-size: 1rem; //og 13px
+  line-height: 1.38rem; //og 18px
 }
 
-
-button,
-label {
-//   font-size: 10px;
-}
 
 a {
   text-decoration: none;
