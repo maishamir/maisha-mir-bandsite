@@ -28,11 +28,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.04rem;
+  font-size: 1.34rem;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.5rem;
 }
 
@@ -77,62 +77,95 @@ p {
 }
 
 .about {
-  padding: 0 1.5rem;
+  padding: 0 24px;
 }
 .about__title {
-  padding: 1.5rem 0 1rem 0;
+  padding: 24px 0 16px 0;
 }
 .about__image img {
-  height: 350px;
+  height: 21.875rem;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 .about__quote {
   color: #323232;
   font-family: "Avenir Next Demi";
-  line-height: 1.875rem;
-  margin-bottom: 1.5rem;
+  line-height: 30px;
+  margin-bottom: 24px;
 }
 .about__band__name {
-  padding: 1rem 0 1.5rem 0;
+  padding: 16px 0 24px 0;
 }
 .about__paragraph {
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .gallery {
   background: #FAFAFA;
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
-  margin-bottom: 1rem;
+  padding: 1.5em;
 }
 .gallery__title {
-  padding: 1.5rem 0 1rem 0;
+  padding: 24px 0 16px 0;
 }
 .gallery__container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
-.gallery__image {
-  margin-bottom: 2.1875rem;
+.gallery__img {
+  margin-bottom: 1rem;
+}
+.gallery__img:last-child {
+  margin-bottom: 0;
 }
 
 .footer {
+  height: 100%;
   background: #323232;
   color: #FFFFFF;
-  padding: 0 16px;
+  padding: 0 1.5rem 3rem 1.5rem;
   display: flex;
   flex-direction: column;
 }
 .footer__title {
   color: #FFFFFF;
-  padding: 1rem 0 1.5rem 0;
+  padding: 1.25rem 0 1rem 0;
 }
-.footer__logo {
+.footer-logo {
   color: #FFFFFF;
   font-family: "Avenir Next Regular";
+  margin-bottom: 1.2rem;
+}
+.footer__icons {
+  display: flex;
+  width: 40%;
+  padding: 1.25rem 0 1rem 0;
+  justify-content: space-between;
+}
+.footer__icons img {
+  height: 2rem;
+}
+.footer-cpyrght {
+  font-size: 1.2rem;
+}
+
+.company {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.company__container {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+.company__name {
+  font-family: "Avenir Next Demi";
 }/*# sourceMappingURL=bio.css.map */
