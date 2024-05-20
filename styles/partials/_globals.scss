@@ -1,9 +1,14 @@
 @use "./typography" as *;
 @use "./variables" as *;
+@use "./mixins" as *;
 
 html {
-  font-family: "Avenir Next Regular";
+  font-family: "Avenir Next";
+  font-weight: normal;
   font-size: 14px;
+  @include tablet {
+    font-size: 15px;
+  }
 }
 
 // MOBILE TEXT STYLES
@@ -11,17 +16,46 @@ html {
 h1 {
   font-size: 1.8rem;  
   color: $bandsite-black;
-  font-family: "Avenir Next Demi";
+  font-family: "Avenir Next";
+  font-weight: 600;
+  @include tablet {
+    font-size: 4.28rem;
+    line-height: 4.85rem;
+  }
+
 }
 
 h2 {
-  font-size: 1.07rem; //og 14px
-  font-family: "Avenir Next Demi";
+  font-size: 1.8rem; //og 14px
+  font-family: "Avenir Next";
+  font-weight: 600;
+  line-height: 2.46rem;
+
+  @include tablet {
+    font-size: 2.57rem;
+    line-height: 3.14rem;
+  }
+}
+
+h3 {
+  font-size: 1.0715rem;
+  font-family: "Avenir Next";
+  font-weight: 600;
+  line-height: 1.7rem;
+
+  @include tablet {
+    font-size: 1.71rem;
+    line-height: 2.28rem;
+  }
 }
 
 p {
-  font-size: 1rem; //og 13px
-  line-height: 1.38rem; //og 18px
+  font-size: 1rem;
+  line-height: 1.38rem;
+  @include tablet {
+    font: 1rem;
+    line-height: 1.57rem;
+  }
 }
 
 

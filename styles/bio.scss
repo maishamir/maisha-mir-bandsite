@@ -8,17 +8,31 @@
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+}
+
 .header {
   background-color: $bandsite-black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 1.25em;
+  padding: 0 2.57rem;
   text-align: center;
 
   @include tablet {
     flex-direction: row;
   }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+
   &__nav__list {
     display: flex;
     list-style-type: none;
@@ -26,7 +40,7 @@
     width: 100vw;
 
     @include tablet {
-      width: 50vw;
+      width: 35vw;
     }
   }
 
@@ -36,6 +50,9 @@
     padding: 1em;
     border-bottom: 3px solid transparent;
 
+    @include tablet {
+      // height: 100%;
+    }
     &:hover {
       cursor: pointer;
       color: white;
@@ -43,16 +60,25 @@
     }
 
     a:active {
-      font-family: "Avenir Next Demi";
+      font-family: "Avenir Next";
+      font-weight: 600;
     }
   }
 
   &__logo {
     color: $white;
-    font-family: "Avenir Next Regular";
+    font-family: "Avenir Next";
+    font-weight: 400;
+    font-size: 24px;
+    padding-top: 1rem;
+
+    @include tablet {
+      padding-top: 0;
+    }
 
     &__container {
-      width: 100vw;
+      // background: red;
+      margin-right: 2rem;
       text-align: center;
     }
   }
@@ -64,6 +90,12 @@
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url(../assets/images/hero-bio.jpg);
   background-size: cover;
+
+  @include tablet {
+    height: 35vh;
+    padding: 0 1.25rem;
+  }
+
   &__title {
     position: absolute;
     top: 50%;
@@ -75,42 +107,63 @@
     img {
       width: 100vw;
       height: 25vh;
+      max-height: 25vh;
       object-fit: cover;
     }
   }
 }
 .about {
-  padding: 0 1.5rem;
-
-  @include tablet {
-  }
-
+  padding: 0 1.5rem 1.25rem 1.5rem;
   &__title {
+    color: $bandsite-black;
     padding: 1.25rem 0 1rem 0;
+
+    @include tablet {
+      padding: 3rem 2.57rem 2.57rem 0;
+    }
   }
 
   &__image {
     img {
-      height: 13rem;
-      width: 100%;
-      object-fit: fill;
+      max-height: 22rem;
+      object-fit: cover;
       margin-bottom: 1rem;
+    }
+
+    @include tablet {
+      padding: 0 3.5rem;
     }
   }
 
   &__quote {
     color: $bandsite-black;
-    font-family: "Avenir Next Demi";
+    font-family: "Avenir Next";
+    font-weight: 600;
     font-size: 1.25rem;
     margin-bottom: 1rem;
     line-height: 1.65em;
   }
-  &__band__name {
-    padding: 1.25rem 0 1.25rem 0;
-  }
 
-  &__paragraph {
-    margin-bottom: 0.67em;
+  &__band {
+    @include tablet {
+      padding: 0 3.5rem;
+      // display: flex;
+    }
+    &__name {
+      color: $bandsite-black;
+      padding: 1.25rem 0 1.25rem 0;
+    }
+
+    &__paragraphs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      @include tablet {
+        flex-direction: row;
+        gap: 1rem;
+      }
+    }
   }
 }
 
@@ -118,31 +171,64 @@
   background: $alabaster;
   display: flex;
   flex-direction: column;
-  padding: 1em 1.25em;
+  padding: 1.25em 1.25em;
+
+  @include tablet {
+    padding: 2.57rem;
+  }
   &__title {
-    padding: 1.25rem 0 1rem 0;
+    color: $bandsite-black;
+    padding: 0 0 1.25rem 0;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+
+    @include tablet {
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+    }
   }
 
   &__img {
     &:last-child {
       margin-bottom: 0;
     }
+
+    @include tablet {
+      width: calc(33% - 1.16rem);
+    }
   }
 }
 
 .footer {
-  height: 85vh;
+  // height: 85vh;
   background: $bandsite-black;
   color: $white;
   padding: 0 1.5rem 3rem 1.5rem;
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  @include tablet {
+    p {
+      line-height: 1.42rem;
+    }
+
+    padding: 0 2.57rem 3rem 2.57rem;
+  }
+
+  &__header {
+    padding: 1rem 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    @include tablet {
+      align-items: baseline;
+    }
+  }
 
   &__title {
     color: $white;
@@ -151,14 +237,30 @@
 
   &-logo {
     color: $white;
-    font-family: "Avenir Next Regular";
-    margin-bottom: 1.2rem;
+    font-family: "Avenir Next";
+    font-weight: 400;
+    font-size: 24px;
+
+    &--top {
+      visibility: hidden;
+      @include tablet {
+        visibility: visible;
+      }
+    }
+
+    &--bottom {
+      margin-bottom: 1.2rem;
+      @include tablet {
+        display: none;
+      }
+    }
   }
+
+    
 
   &__icons {
     display: flex;
-    min-width: 30%;
-    width: 35%;
+    width: 10rem;
     padding: 1.25rem 0 0rem 0;
     justify-content: space-between;
     img {
@@ -168,20 +270,27 @@
 }
 
 .company {
-  height: 23%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
   &__container {
-    height: 70%;
+    // height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-bottom: 2rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__name {
-    font-family: "Avenir Next Demi";
+    font-family: "Avenir Next";
+    font-weight: 600;
   }
 
   &-cpyrght {
