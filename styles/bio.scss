@@ -14,11 +14,16 @@ img {
 
 .header {
   background-color: $bandsite-black;
-  padding: 0 2.57rem;
+  padding: 0 1rem;
   text-align: center;
 
   @include tablet {
     flex-direction: row;
+    padding: 0 2.57rem;
+  }
+
+  @include desktop {
+    padding: 0 5.7rem;
   }
 
   &__container {
@@ -47,11 +52,11 @@ img {
   &__item {
     width: 50%;
     color: $mercury;
-    padding: 1em;
+    
     border-bottom: 3px solid transparent;
 
     @include tablet {
-      // height: 100%;
+      padding: 1.5rem;
     }
     &:hover {
       cursor: pointer;
@@ -77,7 +82,6 @@ img {
     }
 
     &__container {
-      // background: red;
       margin-right: 2rem;
       text-align: center;
     }
@@ -94,6 +98,10 @@ img {
   @include tablet {
     height: 35vh;
     padding: 0 1.25rem;
+  }
+
+  @include desktop {
+    padding: 0 4.7rem;
   }
 
   &__title {
@@ -121,6 +129,10 @@ img {
     @include tablet {
       padding: 3rem 2.57rem 2.57rem 0;
     }
+
+    @include desktop {
+      padding: 3rem 0rem 2.57rem 4.7rem;
+    }
   }
 
   &__image {
@@ -132,6 +144,11 @@ img {
 
     @include tablet {
       padding: 0 3.5rem;
+      max-height: 35rem;
+    }
+
+    @include desktop {
+      padding: 0 8rem;
     }
   }
 
@@ -147,7 +164,10 @@ img {
   &__band {
     @include tablet {
       padding: 0 3.5rem;
-      // display: flex;
+    }
+
+    @include desktop {
+      padding: 0 8rem;
     }
     &__name {
       color: $bandsite-black;
@@ -176,9 +196,17 @@ img {
   @include tablet {
     padding: 2.57rem;
   }
+
+  @include desktop {
+    padding: 3rem 5.7rem;
+  }
   &__title {
     color: $bandsite-black;
     padding: 0 0 1.25rem 0;
+
+    @include desktop {
+      padding: 0 0 3rem 0;
+    }
   }
 
   &__container {
@@ -204,7 +232,6 @@ img {
 }
 
 .footer {
-  // height: 85vh;
   background: $bandsite-black;
   color: $white;
   padding: 0 1.5rem 3rem 1.5rem;
@@ -216,8 +243,11 @@ img {
     p {
       line-height: 1.42rem;
     }
+    padding: 1.5rem 2.57rem 3rem 2.57rem;
+  }
 
-    padding: 0 2.57rem 3rem 2.57rem;
+  @include desktop {
+    padding: 1rem 5.7rem;
   }
 
   &__header {
@@ -233,6 +263,25 @@ img {
   &__title {
     color: $white;
     padding: 1.25rem 0 1rem 0;
+    font-size: 2.25rem;
+
+    @include desktop {
+      font-size: 3rem;
+    }
+
+    &__icons {
+      @include tablet {
+        min-width: 43%;
+        max-width: 55%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+
+      @include desktop {
+        max-width: 20%;
+      }
+    }
   }
 
   &-logo {
@@ -256,8 +305,6 @@ img {
     }
   }
 
-    
-
   &__icons {
     display: flex;
     width: 10rem;
@@ -265,6 +312,10 @@ img {
     justify-content: space-between;
     img {
       height: 2rem;
+
+      @include tablet {
+        height: 1.5rem;
+      }
     }
   }
 }
@@ -276,7 +327,6 @@ img {
   gap: 1.5rem;
   padding: 1.5rem 0;
   &__container {
-    // height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -284,6 +334,11 @@ img {
 
     @include tablet {
       flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      max-width: 80%;
       justify-content: space-between;
     }
   }
