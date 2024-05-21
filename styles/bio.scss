@@ -58,11 +58,19 @@ img {
     transition: border-color 0.15s;
     @include tablet {
       padding: 1.5rem;
+      border: none;
+      text-decoration: 3px underline transparent;
+      text-underline-offset: 1.9rem;
+      transition: text-decoration-color 0.15s;
     }
     &:hover {
       cursor: pointer;
       color: white;
       border-color: white;
+
+      @include tablet {
+        text-decoration-color: white;
+      }
     }
 
     a:active {
@@ -235,11 +243,17 @@ img {
     }
 
     @include desktop {
-      padding: 0 10rem;
+      padding: 0 1rem;
     }
   }
 
   &__img {
+    filter: grayscale(1);
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: grayscale(0);
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -298,7 +312,6 @@ img {
 
       @include desktop {
         max-width: 45%;
-
       }
     }
   }

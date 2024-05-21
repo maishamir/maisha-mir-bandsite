@@ -152,12 +152,22 @@ img {
 @media (min-width: 768px) {
   .header__item {
     padding: 1.5rem;
+    border: none;
+    -webkit-text-decoration: 3px underline transparent;
+            text-decoration: 3px underline transparent;
+    text-underline-offset: 1.9rem;
+    transition: text-decoration-color 0.15s;
   }
 }
 .header__item:hover {
   cursor: pointer;
   color: white;
   border-color: white;
+}
+@media (min-width: 768px) {
+  .header__item:hover {
+    text-decoration-color: white;
+  }
 }
 .header__item a:active {
   font-family: "Avenir Next";
@@ -334,8 +344,15 @@ img {
 }
 @media (min-width: 1280px) {
   .gallery__container {
-    padding: 0 10rem;
+    padding: 0 1rem;
   }
+}
+.gallery__img {
+  filter: grayscale(1);
+  transition: filter 0.2s;
+}
+.gallery__img:hover {
+  filter: grayscale(0);
 }
 .gallery__img:last-child {
   margin-bottom: 0;
