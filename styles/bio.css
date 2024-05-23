@@ -363,6 +363,27 @@ img {
   }
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+}
+.form label {
+  margin-bottom: 0;
+}
+
+.conversation {
+  padding: 1.25em;
+}
+.conversation__title {
+  padding: 0 0 1.25rem 0;
+}
+.conversation .button {
+  height: 40px;
+  width: 100%;
+}
+
 .footer {
   background: #323232;
   color: #FFFFFF;

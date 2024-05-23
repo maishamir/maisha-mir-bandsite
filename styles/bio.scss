@@ -130,6 +130,7 @@ img {
     }
   }
 }
+
 .about {
   display: flex;
   flex-direction: column;
@@ -261,6 +262,30 @@ img {
     @include tablet {
       width: calc(33% - 1.16rem);
     }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+
+  label {
+    margin-bottom: 0;
+  }
+}
+
+.conversation {
+  padding: 1.25em;
+
+  &__title {
+    padding: 0 0 1.25rem 0;
+  }
+
+  .button {
+    height: 40px;
+    width: 100%;
   }
 }
 
