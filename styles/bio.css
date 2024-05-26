@@ -26,6 +26,9 @@ img {
   width: 100%;
 }
 
+hr {
+  border: 1px solid #E1E1E1;
+}
 .header {
   background-color: #323232;
   padding: 0 1rem;
@@ -334,6 +337,97 @@ button:hover {
   cursor: pointer;
 }
 
+.form-section {
+  padding: 1rem 2rem;
+}
+
+.conversation {
+  padding: 1.25em;
+}
+.conversation__title {
+  padding: 0 0 1.25rem 0;
+  color: #323232;
+  font-size: 2.25rem;
+}
+
+.form {
+  width: 85%;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.form input[type=text], .form textarea {
+  width: 100%;
+  border: none;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+}
+.form input[type=text]:focus, .form textarea:focus {
+  border-color: #323232;
+  outline: none;
+}
+.form label {
+  display: inline-block;
+  padding-bottom: 4px;
+  color: #AFAFAF;
+  font-weight: 600;
+  font-size: 0.77rem;
+}
+.form input[type=text] {
+  height: 36px;
+  padding: 12px;
+}
+.form textarea {
+  padding: 1rem;
+  resize: none;
+}
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  width: 100%;
+}
+.form-container__avatar {
+  width: 36px;
+  height: 36px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  -o-object-position: 20% 50%;
+     object-position: 20% 50%;
+  margin-top: 1.25rem;
+}
+
+.comments {
+  padding: 1rem 1.5rem;
+}
+.comments-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.comments__usrAvatar {
+  width: 36px;
+  height: 36px;
+  background: #E1E1E1;
+  border-radius: 50%;
+}
+.comments-item {
+  width: 85%;
+}
+.comments-item__details {
+  display: flex;
+  justify-content: space-between;
+}
+.comments-item__name {
+  font-weight: 600;
+  color: #323232;
+  margin-bottom: 1rem;
+}
+.comments-item__date {
+  color: #AFAFAF;
+}
 .hero {
   position: relative;
   height: 25vh;
@@ -505,25 +599,4 @@ button:hover {
   .gallery__img {
     width: calc(33% - 1.16rem);
   }
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 80%;
-}
-.form label {
-  margin-bottom: 0;
-}
-
-.conversation {
-  padding: 1.25em;
-}
-.conversation__title {
-  padding: 0 0 1.25rem 0;
-}
-.conversation .button {
-  height: 40px;
-  width: 100%;
 }/*# sourceMappingURL=bio.css.map */

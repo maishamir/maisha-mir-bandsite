@@ -12,6 +12,13 @@ img {
   width: 100%;
 }
 
+hr {
+    border: 1px solid $mercury;
+
+    @include tablet {
+        
+    }
+}
 
 .header {
   background-color: $bandsite-black;

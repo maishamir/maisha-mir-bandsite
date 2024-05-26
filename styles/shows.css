@@ -26,6 +26,9 @@ img {
   width: 100%;
 }
 
+hr {
+  border: 1px solid #E1E1E1;
+}
 .header {
   background-color: #323232;
   padding: 0 1rem;
@@ -380,9 +383,6 @@ section {
   padding: 1.25rem;
 }
 
-hr {
-  border: 1px solid #E1E1E1;
-}
 /* 
     <div class="show">
         <div class="show-info">

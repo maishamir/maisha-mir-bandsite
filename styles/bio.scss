@@ -2,6 +2,111 @@
 @use "./partials/globals" as *;
 @use "./partials/mixins" as *;
 
+.form-section {
+  padding: 1rem 2rem;
+}
+
+.conversation {
+  padding: 1.25em;
+
+  &__title {
+    padding: 0 0 1.25rem 0;
+    color: $bandsite-black;
+    font-size: 2.25rem;
+  }
+}
+
+.form {
+  width: 85%;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  input[type="text"], textarea {
+    width: 100%;
+    border: none;
+    border: 1px solid $mercury;
+    border-radius: 4px;
+    
+    &:focus {
+      border-color: $bandsite-black;
+      outline: none;
+    }
+  }
+
+  label {
+    // border: 1px solid darkblue;
+    display: inline-block;
+    padding-bottom: 4px;
+    color: $silver;
+    font-weight: 600;
+    font-size: 0.77rem;
+  }
+
+  input[type="text"] {
+    height: 36px;
+    // border: none;
+    padding: 12px;
+  }
+
+  textarea {
+    padding: 1rem;
+    resize: none;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 100%;
+    &__avatar {
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      border-radius: 50%;
+      object-position: 20% 50%;
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+.comments {
+  padding: 1rem 1.5rem;
+
+  &-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem 0;
+    // gap: 2rem;
+  }
+  &__usrAvatar {
+    width: 36px;
+    height: 36px;
+    background: $mercury;
+    border-radius: 50%;
+  }
+
+  &-item {
+    width: 85%;
+    &__details {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__name {
+      font-weight: 600;
+      color: $bandsite-black;
+      margin-bottom: 1rem;
+    }
+    &__date {
+      color: $silver;
+    }
+
+    &__text {
+    }
+  }
+}
+
 .hero {
   position: relative;
   height: 25vh;
@@ -169,28 +274,3 @@
     }
   }
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 80%;
-
-  label {
-    margin-bottom: 0;
-  }
-}
-
-.conversation {
-  padding: 1.25em;
-
-  &__title {
-    padding: 0 0 1.25rem 0;
-  }
-
-  .button {
-    height: 40px;
-    width: 100%;
-  }
-}
-
