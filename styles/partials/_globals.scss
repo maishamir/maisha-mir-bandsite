@@ -136,7 +136,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8rem; //og 14px
+  font-size: 1.8rem;
   font-family: "Avenir Next";
   font-weight: 600;
   line-height: 2.46rem;
@@ -151,7 +151,7 @@ h3 {
   font-size: 1.0715rem;
   font-family: "Avenir Next";
   font-weight: 600;
-  line-height: 1.7rem;
+  line-height: 2rem;
 
   @include tablet {
     font-size: 1.71rem;
@@ -213,7 +213,7 @@ a {
   &__title {
     color: $white;
     padding: 1.25rem 0 1rem 0;
-    font-size: 2.25rem;
+    font-size: 2rem;
 
     @include desktop {
       font-size: 2.75rem;
@@ -316,7 +316,4 @@ button {
     cursor: pointer;
   }
 
-  // @include tablet {
-  //   min-width: 150px;
-  // }
 }

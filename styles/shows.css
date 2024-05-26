@@ -168,7 +168,7 @@ h3 {
   font-size: 1.0715rem;
   font-family: "Avenir Next";
   font-weight: 600;
-  line-height: 1.7rem;
+  line-height: 2rem;
 }
 @media (min-width: 768px) {
   h3 {
@@ -233,7 +233,7 @@ a {
 .footer__title {
   color: #FFFFFF;
   padding: 1.25rem 0 1rem 0;
-  font-size: 2.25rem;
+  font-size: 2rem;
 }
 @media (min-width: 1280px) {
   .footer__title {
