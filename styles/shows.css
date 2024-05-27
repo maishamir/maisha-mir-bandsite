@@ -216,7 +216,9 @@ a {
 }
 @media (min-width: 1280px) {
   .footer__container {
-    max-width: 75rem;
+    width: 75rem;
+    max-width: 80rem;
+    margin: 0 auto;
   }
 }
 .footer__header {

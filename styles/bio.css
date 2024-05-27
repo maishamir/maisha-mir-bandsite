@@ -216,7 +216,9 @@ a {
 }
 @media (min-width: 1280px) {
   .footer__container {
-    max-width: 75rem;
+    width: 75rem;
+    max-width: 80rem;
+    margin: 0 auto;
   }
 }
 .footer__header {
@@ -580,9 +582,9 @@ button:hover {
 }
 @media (min-width: 1280px) {
   .about__image {
-    padding: 0 8rem;
+    margin-bottom: 8rem;
     max-height: 35rem;
-    width: 70%;
+    width: 80%;
   }
 }
 .about__quote {
@@ -596,11 +598,15 @@ button:hover {
 @media (min-width: 768px) {
   .about__band {
     padding: 0 7rem;
+    margin-top: 4rem;
   }
 }
 @media (min-width: 1280px) {
   .about__band {
-    padding: 7rem 14.5rem;
+    padding: 1rem;
+    width: 80%;
+    margin-top: 1rem;
+    margin: 0 auto;
   }
 }
 .about__band__name {
