@@ -2,78 +2,91 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
-
 section {
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
 }
 
-
 .hero {
-    position: relative;
-    height: 40vh;
-    background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
-    background-size: cover;
+  position: relative;
+  height: 40vh;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url(../assets/images/hero-shows.jpg);
+  background-size: cover;
 
-    &__text__container {
-        position: absolute;
-        top: 45%;
-        transform: translateY(-50%);
-        color: white;
-    }
+  &__text__container {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    color: white;
+  }
 }
 
 .show {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    // margin-bottom: 1.25rem;
-    // border: 1px solid red;
-    padding: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
 
-    &:hover {
-        background: $alabaster;   
+  @include tablet {
+    &:first-of-type {
+      .show-info__label {
+        margin-top: -1.5rem;
+        margin-bottom: 1rem;
+      }
     }
+    &:not(:first-of-type) {
+      .show-info__label {
+        display: none;
+      }
+      .show-info__detail {
+        margin-top: 1rem;
+      }
+    }
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  &:hover {
+    background: $alabaster;
+  }
 
-    &:active {
-        background: $mercury;
+  &:active {
+    background: $mercury;
+  }
+  &-info {
+    @include tablet {
+      flex: 1 1 25%;
+      max-width: 25%;
     }
-    &-info {
-        &__label {
-            color: $silver;
-            font-size: 0.77rem;
-        }
-        &__detail {
-            &--date {
-                font-weight: 600;
-                color: $bandsite-black;
-            }
-        }
+    &__label {
+      color: $silver;
+      font-size: 0.77rem;
     }
+    &__detail {
+      &--date {
+        font-weight: 600;
+        color: $bandsite-black;
 
-    &-container {
-        margin-bottom: 1.25rem;
-        padding: 0;
-        &__title {
-            padding: 1.25rem;
+        @include tablet {
+            // align-self: flex-end;
         }
+      }
     }
+  }
+
+  &-container {
+    margin-bottom: 1.25rem;
+    padding: 0;
+    &__title {
+      padding: 1.25rem;
+    }
+  }
+
+  button {
+    @include tablet {
+      align-self: center;
+      margin-top: 1rem;
+      flex: 1 1 25%;
+    }
+  }
 }
-/* 
-    <div class="show">
-        <div class="show-info">
-            <p class="show-info__label">DATE</p>
-            <p class="show-info__detail show-info__detail--date>date</p>
-        </div>
-        <div class="show-info">
-            <p class="show-info__label">VENUE</p>
-            <p class="show-info__detail">venue</p>
-        </div>
-        <div class="show-info">
-            <p class="show-info__label">LOCATION</p>
-            <p class="show-info__detail">location</p>
-        </div>
-        <button class="button">BUY TICKETS</button>
-    </div>
-*/
-

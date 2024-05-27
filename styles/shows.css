@@ -361,11 +361,33 @@ section {
   gap: 1rem;
   padding: 1.25rem;
 }
+@media (min-width: 768px) {
+  .show {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .show:first-of-type .show-info__label {
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
+  }
+  .show:not(:first-of-type) .show-info__label {
+    display: none;
+  }
+  .show:not(:first-of-type) .show-info__detail {
+    margin-top: 1rem;
+  }
+}
 .show:hover {
   background: #FAFAFA;
 }
 .show:active {
   background: #E1E1E1;
+}
+@media (min-width: 768px) {
+  .show-info {
+    flex: 1 1 25%;
+    max-width: 25%;
+  }
 }
 .show-info__label {
   color: #AFAFAF;
@@ -382,21 +404,10 @@ section {
 .show-container__title {
   padding: 1.25rem;
 }
-
-/* 
-    <div class="show">
-        <div class="show-info">
-            <p class="show-info__label">DATE</p>
-            <p class="show-info__detail show-info__detail--date>date</p>
-        </div>
-        <div class="show-info">
-            <p class="show-info__label">VENUE</p>
-            <p class="show-info__detail">venue</p>
-        </div>
-        <div class="show-info">
-            <p class="show-info__label">LOCATION</p>
-            <p class="show-info__detail">location</p>
-        </div>
-        <button class="button">BUY TICKETS</button>
-    </div>
-*//*# sourceMappingURL=shows.css.map */
+@media (min-width: 768px) {
+  .show button {
+    align-self: center;
+    margin-top: 1rem;
+    flex: 1 1 25%;
+  }
+}/*# sourceMappingURL=shows.css.map */

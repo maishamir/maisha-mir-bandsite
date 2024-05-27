@@ -59,38 +59,24 @@ function createComment(comment) {
   const userAvatar = createTagWithClass("div", "comments__usrAvatar")
   commentContainer.appendChild(userAvatar)
 
-  // create comments-item div element
   const commentItem = createTagWithClass("div", "comments-item")
-  // create comments-item__details div element
   const commentDetails = createTagWithClass("div", "comments-item__details")
 
-  // create comments-item__name p element
   const userName = createTagWithClass("p", "comments-item__name");
-  // set innerText to comment.name
   userName.innerText = comment.name
-  // APPEND name element to details div
   commentDetails.appendChild(userName)
 
-  // create comments-item__date p element
   const commentDate = createTagWithClass("p", "comments-item__date")
-  // set innerText to comment.date
   commentDate.innerText = comment.date
-  // APPEND date element to details div
   commentDetails.appendChild(commentDate)
 
-  // APPEND THE DETAILS DIV TO THE ITEM DIV
   commentItem.appendChild(commentDetails)
 
-  // create commenst-item__text p element
   const commentText = createTagWithClass("p", "comments-item__text")
-  // set innerText to comment.text
   commentText.innerText = comment.text
-  // APPEND to comments-item
   commentItem.appendChild(commentText)
 
-  // APPEND comment-item to container element
   commentContainer.appendChild(commentItem)
-// return the container element
 
   return commentContainer
 }

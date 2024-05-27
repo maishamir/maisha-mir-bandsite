@@ -16,81 +16,59 @@ const shows = [
   },
 ];
 
-/* 
-    <div class="show-item">
-        <div class="show-item__date">
-            <p>DATE</p>
-            <p>date</p>
-        </div>
-        <div class="show-item__venue">
-            <p>VENUE</p>
-            <p>venue</p>
-        </div>
-        <div class="show-item__location">
-            <p>LOCATION</p>
-            <p>location</p>
-        </div>
-    </div>
-*/
+function createTagWithClass(tag, classNames) {
+  const element = document.createElement(tag);
+  classNames.forEach((className) => {
+    element.classList.add(className);
+  });
+  return element;
+}
 
 function createShowCard(show) {
-  let showItem = document.createElement("div"); //div class show-item
-  showItem.classList.add("show");
-  let dateItem = document.createElement("div"); //div class show-item__date
+  let showItem = createTagWithClass("div", ["show"]);
+  let showInfo = createTagWithClass("div", ["show-info"]);
+  showItem.appendChild(showInfo);
 
-  // <p>DATE</p>
-  const dateLabel = document.createElement("p");
-  dateLabel.classList.add("show-info__label");
-  dateLabel.innerHTML = "DATE";
-  dateItem.appendChild(dateLabel);
+  let dateLabel = createTagWithClass("p", ["show-info__label"]);
+  dateLabel.innerText = "DATE";
+  showInfo.appendChild(dateLabel);
+  let dateValue = createTagWithClass("p", [
+    "show-info__detail",
+    "show-info__detail--date",
+  ]);
+  dateValue.innerText = show.date;
+  showInfo.appendChild(dateValue);
 
-  // <p>date</p>
-  const date = document.createElement("p");
-  date.classList.add("show-info__detail--date");
-  date.innerHTML = show.date;
-  dateItem.appendChild(date);
+  let showInfoTwo = createTagWithClass("div", ["show-info"]);
+  showItem.appendChild(showInfoTwo);
 
-  showItem.appendChild(dateItem);
+  let venueLabel = createTagWithClass("p", ["show-info__label"]);
+  venueLabel.innerText = "VENUE";
+  showInfoTwo.appendChild(venueLabel);
+  let venueValue = createTagWithClass("p", ["show-info__detail"]);
+  venueValue.innerText = show.venue;
+  showInfoTwo.appendChild(venueValue);
 
-  let venueItem = document.createElement("div");
+  let showInfoThree = createTagWithClass("div", ["show-info"]);
+  showItem.append(showInfoThree);
 
-  // <p>VENUE</p>
-  const venueLabel = document.createElement("p");
-  venueLabel.classList.add("show-info__label");
-  venueLabel.innerHTML = "VENUE";
-  venueItem.appendChild(venueLabel);
-
-  // <p>venue</p>
-  const venue = document.createElement("p");
-  venue.innerHTML = show.venue;
-  venueItem.appendChild(venue);
-
-  showItem.appendChild(venueItem);
-  let locationItem = document.createElement("div");
-
-  // <p>LOCATION</p>
-  const locationLabel = document.createElement("p");
-  locationLabel.classList.add("show-info__label");
-  locationLabel.innerHTML = "LOCATION";
-  locationItem.appendChild(locationLabel);
-
-  // <p>location</p>
-  const location = document.createElement("p");
-  location.innerHTML = show.location;
-  locationItem.appendChild(location);
-
-  showItem.appendChild(locationItem);
+  let locationLabel = createTagWithClass("p", ["show-info__label"]);
+  locationLabel.innerText = "LOCATION";
+  showInfoThree.appendChild(locationLabel);
+  let locationValue = createTagWithClass("p", ["show-info__detail"]);
+  locationValue.innerText = show.location;
+  showInfoThree.appendChild(locationValue);
 
   const button = document.createElement("button");
   button.innerHTML = "BUY TICKETS";
 
   showItem.appendChild(button);
+
   return showItem;
 }
 
 let showsContainer = document.querySelector(".show-container");
 
-// for each object in the shows array, run the createShowItem and append it to the showsContainer
 shows.forEach((show) => {
   showsContainer.appendChild(createShowCard(show));
   const hr = document.createElement("hr");
