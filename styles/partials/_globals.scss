@@ -303,11 +303,11 @@ a {
 }
 
 button {
-  height: 40px;
+  padding: 1.25rem;
   width: 100%;
   border: none;
   border-radius: 4px;
-  font-size: 0.77rem;
+  font-size: 1rem;
   background: $bandsite-black;
   color: white;
 
@@ -315,5 +315,8 @@ button {
     background: $bandsite-darkblack;
     cursor: pointer;
   }
+}
 
+::placeholder {
+  color: $bandsite-black;
 }

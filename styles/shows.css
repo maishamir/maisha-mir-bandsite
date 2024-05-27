@@ -324,17 +324,25 @@ a {
 }
 
 button {
-  height: 40px;
+  padding: 1.25rem;
   width: 100%;
   border: none;
   border-radius: 4px;
-  font-size: 0.77rem;
+  font-size: 1rem;
   background: #323232;
   color: white;
 }
 button:hover {
   background: #000000;
   cursor: pointer;
+}
+
+::-moz-placeholder {
+  color: #323232;
+}
+
+::placeholder {
+  color: #323232;
 }
 
 section {

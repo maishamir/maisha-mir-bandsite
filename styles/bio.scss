@@ -4,6 +4,10 @@
 
 .form-section {
   padding: 1rem 1.5rem;
+
+  @include tablet {
+    padding-top: 3rem;
+  }
 }
 
 .conversation {
@@ -27,7 +31,11 @@
     border: none;
     border: 1px solid $mercury;
     border-radius: 4px;
+    padding: 1rem;
     
+    @include tablet {
+      padding: 1rem;
+    }
     &:focus {
       border-color: $bandsite-black;
       outline: none;
@@ -44,8 +52,10 @@
 
   input[type="text"] {
     height: 36px;
-    // border: none;
-    padding: 12px;
+
+    @include tablet {
+      height: 48px;
+    }
   }
 
   textarea {
@@ -57,8 +67,12 @@
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    padding: 1rem 0;
+    padding: 2rem 0;
     width: 100%;
+
+    @include tablet {
+      padding: 2.5rem 2.5rem 1rem 2.5rem;
+    }
     &__avatar {
       width: 36px;
       height: 36px;
@@ -66,12 +80,32 @@
       border-radius: 50%;
       object-position: 20% 50%;
       margin-top: 1.25rem;
+
+      @include tablet {
+        width: 48px;
+        height: 48px;
+      }
     }
   }
+
+  button {
+    width: 33%;
+    align-self: flex-end;
+  }
+
 }
 
+
 .comments {
-  padding: 1rem 1.5rem;
+  padding: 0rem 1.5rem;
+
+  hr {
+    margin-bottom: 1rem;
+  }
+
+  @include tablet {
+    padding: 0rem 4rem 2rem 4rem;
+  }
 
   &-container {
     display: flex;
@@ -85,6 +119,11 @@
     height: 36px;
     background: $mercury;
     border-radius: 50%;
+    
+    @include tablet {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &-item {
@@ -100,9 +139,6 @@
     }
     &__date {
       color: $silver;
-    }
-
-    &__text {
     }
   }
 }
