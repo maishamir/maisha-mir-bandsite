@@ -8,6 +8,10 @@
   @include tablet {
     padding-top: 3rem;
   }
+
+  @include desktop {
+    padding: 3rem 6.7rem;
+  }
 }
 
 .conversation {
@@ -26,13 +30,14 @@
   display: flex;
   flex-direction: column;
 
-  input[type="text"], textarea {
+  input[type="text"],
+  textarea {
     width: 100%;
     border: none;
     border: 1px solid $mercury;
     border-radius: 4px;
     padding: 1rem;
-    
+
     @include tablet {
       padding: 1rem;
     }
@@ -71,7 +76,13 @@
     width: 100%;
 
     @include tablet {
-      padding: 2.5rem 2.5rem 1rem 2.5rem;
+      padding: 2.5rem 2.5rem 0.25rem 2.5rem;
+    }
+
+    @include desktop {
+      width: 43rem;
+      max-width: 45rem;
+      margin: 0 auto;
     }
     &__avatar {
       width: 36px;
@@ -92,9 +103,7 @@
     width: 33%;
     align-self: flex-end;
   }
-
 }
-
 
 .comments {
   padding: 0rem 1.5rem;
@@ -107,19 +116,23 @@
     padding: 0rem 4rem 2rem 4rem;
   }
 
+  @include desktop {
+    width: 46rem;
+    margin: 0 auto;
+  }
+
   &-container {
     display: flex;
     gap: 1rem;
     justify-content: space-between;
     padding: 1rem 0;
-    // gap: 2rem;
   }
   &__usrAvatar {
     width: 36px;
     height: 36px;
     background: $mercury;
     border-radius: 50%;
-    
+
     @include tablet {
       width: 48px;
       height: 48px;
@@ -210,7 +223,7 @@
     @include tablet {
       padding: 0 3.5rem;
       max-height: 35rem;
-      margin-bottom: 8rem;
+      margin-bottom: 3rem;
       min-width: 85%;
       max-width: 90%;
     }
@@ -237,7 +250,7 @@
     }
 
     @include desktop {
-      padding: 0 14rem;
+      padding: 7rem 14.5rem;
     }
     &__name {
       color: $bandsite-black;
