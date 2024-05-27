@@ -7,21 +7,136 @@ section {
 }
 
 .hero {
-  position: relative;
+  // position: relative;
   height: 40vh;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url(../assets/images/hero-shows.jpg);
   background-size: cover;
 
+  @include desktop {
+    padding: 0;
+  }
+
+  &__container {
+    // background: #000;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    @include tablet {
+      padding-left: 3rem;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__song {
+    width: 100%;
+    border-radius: 0.75rem;
+
+    max-height: 15rem;
+
+    @include tablet {
+      height: 10rem;
+    }
+    &-container {
+      width: 100%;
+      align-self: center;
+
+      @include tablet {
+        width: 75%;
+        align-self: flex-start;
+      }
+
+      @include desktop {
+        width: 33%;
+        align-self: center;
+      }
+    }
+  }
+
+  @include desktop {
+    min-height: 78vh;
+  }
+
   &__text__container {
-    position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
     color: white;
+    @include desktop {
+      margin: 0;
+    }
+
+    p {
+      font-weight: 600;
+      @include tablet {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    h2 {
+      @include tablet {
+        font-size: 4rem;
+        line-height: 4.5rem;
+      }
+    }
   }
 }
 
+.break-default {
+  @include desktop {
+    display: none;
+  }
+}
+
+.break-desktop {
+  display: none;
+  @include desktop {
+    display: inline-block;
+  }
+}
+
+.stings {
+  display: block;
+}
+
 .show {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    padding: 0 3rem;
+
+    &__title {
+      color: $bandsite-black;
+      padding: 2rem;
+      @include desktop {
+        padding: 3rem;
+        margin-left: 5rem;
+      }
+    }
+
+    @include desktop {
+      flex-direction: row;
+      margin: 0 auto;
+      // width: 50%;
+      justify-content: center;
+    }
+
+    &__shows {
+      @include desktop {
+        padding: 3rem;
+        width: 70%;
+      }
+    }
+  }
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -68,19 +183,12 @@ section {
         color: $bandsite-black;
 
         @include tablet {
-            // align-self: flex-end;
+          // align-self: flex-end;
         }
       }
     }
   }
 
-  &-container {
-    margin-bottom: 1.25rem;
-    padding: 0;
-    &__title {
-      padding: 1.25rem;
-    }
-  }
 
   button {
     @include tablet {

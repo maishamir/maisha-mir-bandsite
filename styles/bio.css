@@ -55,7 +55,7 @@ hr {
   .header__container {
     flex-direction: row;
     justify-content: flex-start;
-    margin-left: 8rem;
+    margin-left: 2.5rem;
   }
 }
 .header__nav__list {

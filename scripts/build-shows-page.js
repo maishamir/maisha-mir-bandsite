@@ -10,6 +10,21 @@ const shows = [
     location: "San Francisco, CA",
   },
   {
+    date: "Sat Oct 12 2024",
+    venue: "View Lounge",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Sat Nov 16 2024",
+    venue: "Hyatt Agency",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Fri Nov 29 2024",
+    venue: "Moscow Center",
+    location: "San Francisco, CA"
+  },
+  {
     date: "Wed Dec 18 2024",
     venue: "Press Club",
     location: "San Francisco, CA",
@@ -67,7 +82,7 @@ function createShowCard(show) {
   return showItem;
 }
 
-let showsContainer = document.querySelector(".show-container");
+let showsContainer = document.querySelector(".show-container__shows");
 
 shows.forEach((show) => {
   showsContainer.appendChild(createShowCard(show));
