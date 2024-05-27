@@ -361,6 +361,10 @@ button:hover {
   }
 }
 
+.invalid {
+  border: 1px solid #d22d2d !important;
+}
+
 .conversation {
   padding: 1.25em;
 }

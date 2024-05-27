@@ -5,31 +5,38 @@ function createTagWithClass(tag, className) {
 }
 
 const commentContainer = document.querySelector(".comments");
-const addCommentForm = document.querySelector(".form")
+const addCommentForm = document.querySelector(".form");
 
 function addNewComment(event) {
-  event.preventDefault()
-  const commentObject = {}
-  const name = event.target.name.value;
-  const comment = event.target.comment.value;
-  let currentDate = new Date().toLocaleDateString();
+  event.preventDefault();
 
-  commentObject.name = name
-  commentObject.date = currentDate
-  commentObject.text = comment
+  //check that no form inputs are invalid (add red border if they are)
+  let form = event.target;
+  let validInputs = checkErrorsInForm(form);
 
-  // create new comment object
-  //append it to the parent container
-  const newComment = createComment(commentObject)
-  commentContainer.appendChild(newComment)
+  if (validInputs) {
+    const commentObject = {};
+    const name = event.target.name.value;
+    const comment = event.target.comment.value;
+    let currentDate = new Date().toLocaleDateString();
 
-  const hr = document.createElement("hr");
-  commentContainer.appendChild(hr);
-  
-  event.target.reset()
+    commentObject.name = name;
+    commentObject.date = currentDate;
+    commentObject.text = comment;
+
+    const newComment = createComment(commentObject);
+    commentContainer.appendChild(newComment);
+
+    const hr = document.createElement("hr");
+    commentContainer.appendChild(hr);
+
+    event.target.reset();
+  } else {
+    console.log("Invalid inputs!")
+  }
 }
 
-addCommentForm.addEventListener("submit", addNewComment)
+addCommentForm.addEventListener("submit", addNewComment);
 
 const comments = [
   {
@@ -47,38 +54,33 @@ const comments = [
     date: "10/20/2023",
     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
-  {
-    name: "Maisha Mir",
-    date: "05/24/2024",
-    text: "Awesome concert!! Can't wait to go back and hopefully see them backstage next time ;)"
-  }
 ];
 
 function createComment(comment) {
-  const commentContainer = createTagWithClass("div", "comments-container")
-  const userAvatar = createTagWithClass("div", "comments__usrAvatar")
-  commentContainer.appendChild(userAvatar)
+  const commentContainer = createTagWithClass("div", "comments-container");
+  const userAvatar = createTagWithClass("div", "comments__usrAvatar");
+  commentContainer.appendChild(userAvatar);
 
-  const commentItem = createTagWithClass("div", "comments-item")
-  const commentDetails = createTagWithClass("div", "comments-item__details")
+  const commentItem = createTagWithClass("div", "comments-item");
+  const commentDetails = createTagWithClass("div", "comments-item__details");
 
   const userName = createTagWithClass("p", "comments-item__name");
-  userName.innerText = comment.name
-  commentDetails.appendChild(userName)
+  userName.innerText = comment.name;
+  commentDetails.appendChild(userName);
 
-  const commentDate = createTagWithClass("p", "comments-item__date")
-  commentDate.innerText = comment.date
-  commentDetails.appendChild(commentDate)
+  const commentDate = createTagWithClass("p", "comments-item__date");
+  commentDate.innerText = comment.date;
+  commentDetails.appendChild(commentDate);
 
-  commentItem.appendChild(commentDetails)
+  commentItem.appendChild(commentDetails);
 
-  const commentText = createTagWithClass("p", "comments-item__text")
-  commentText.innerText = comment.text
-  commentItem.appendChild(commentText)
+  const commentText = createTagWithClass("p", "comments-item__text");
+  commentText.innerText = comment.text;
+  commentItem.appendChild(commentText);
 
-  commentContainer.appendChild(commentItem)
+  commentContainer.appendChild(commentItem);
 
-  return commentContainer
+  return commentContainer;
 }
 
 comments.forEach((comment) => {
@@ -86,3 +88,18 @@ comments.forEach((comment) => {
   const hr = document.createElement("hr");
   commentContainer.appendChild(hr);
 });
+
+function checkErrorsInForm(form) {
+  const inputs = form.querySelectorAll("input, textarea");
+  let valid = true;
+
+  inputs.forEach((input) => {
+    if (!input.value) {
+      input.classList.add("invalid");
+      valid = false;
+    } else {
+      input.classList.remove("invalid");
+    }
+  });
+  return valid;
+}
