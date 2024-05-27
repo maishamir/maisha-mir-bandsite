@@ -31,8 +31,6 @@ function addNewComment(event) {
     commentContainer.appendChild(hr);
 
     event.target.reset();
-  } else {
-    console.log("Invalid inputs!")
   }
 }
 

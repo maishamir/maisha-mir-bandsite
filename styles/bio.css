@@ -347,6 +347,21 @@ button:hover {
   color: #323232;
 }
 
+.header__item--active {
+  padding-bottom: 1rem;
+  border-bottom: 3px solid white;
+}
+@media (min-width: 768px) {
+  .header__item--active {
+    border-bottom: none;
+    padding: 1.5rem;
+    border: none;
+    -webkit-text-decoration: 3px underline white;
+            text-decoration: 3px underline white;
+    text-underline-offset: 1.9rem;
+  }
+}
+
 .form-section {
   padding: 1rem 1.5rem;
 }

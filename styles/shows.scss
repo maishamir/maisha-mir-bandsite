@@ -6,6 +6,20 @@ section {
   padding: 1rem 2rem;
 }
 
+.header__item--active {
+  padding-bottom: 1rem;
+    border-bottom: 3px solid white;
+
+    @include tablet {
+      border-bottom: none;
+      padding: 1.5rem;
+      border: none;
+      text-decoration: 3px underline white;
+      text-underline-offset: 1.9rem;
+    }
+
+}
+
 .hero {
   height: 40vh;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
