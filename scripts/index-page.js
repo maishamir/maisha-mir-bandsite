@@ -7,52 +7,31 @@ function createTagWithClass(tag, className) {
 const commentContainer = document.querySelector(".comments");
 const addCommentForm = document.querySelector(".form");
 
-function addNewComment(event) {
-  event.preventDefault();
+// export default function addNewComment(event) {
+//   event.preventDefault();
 
-  //check that no form inputs are invalid (add red border if they are)
-  let form = event.target;
-  let validInputs = checkErrorsInForm(form);
+//   let form = event.target;
+//   let validInputs = checkErrorsInForm(form);
 
-  if (validInputs) {
-    const commentObject = {};
-    const name = event.target.name.value;
-    const comment = event.target.comment.value;
-    let currentDate = new Date().toLocaleDateString();
+//   if (validInputs) {
+//     const commentObject = {};
+//     const name = event.target.name.value;
+//     const comment = event.target.comment.value;
+//     let currentDate = new Date().toLocaleDateString();
 
-    commentObject.name = name;
-    commentObject.date = currentDate;
-    commentObject.text = comment;
+//     commentObject.name = name;
+//     commentObject.date = currentDate;
+//     commentObject.text = comment;
 
-    const newComment = createComment(commentObject);
-    commentContainer.appendChild(newComment);
+//     const newComment = createComment(commentObject);
+//     commentContainer.appendChild(newComment);
 
-    const hr = document.createElement("hr");
-    commentContainer.appendChild(hr);
+//     const hr = document.createElement("hr");
+//     commentContainer.appendChild(hr);
 
-    event.target.reset();
-  }
-}
-
-addCommentForm.addEventListener("submit", addNewComment);
-
-const comments = [
-  {
-    name: "Victor Pinto",
-    date: "11/02/2023",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deservers reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Christina Cabrera",
-    date: "10/28/2023",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Isaac Tadesse",
-    date: "10/20/2023",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+//     event.target.reset();
+//   }
+// }
 
 function createComment(comment) {
   const commentContainer = createTagWithClass("div", "comments-container");
@@ -67,13 +46,15 @@ function createComment(comment) {
   commentDetails.appendChild(userName);
 
   const commentDate = createTagWithClass("p", "comments-item__date");
-  commentDate.innerText = comment.date;
+  const date = new Date(comment.timestamp).toLocaleDateString("en-US")
+  commentDate.innerText = date;
+  
   commentDetails.appendChild(commentDate);
 
   commentItem.appendChild(commentDetails);
 
   const commentText = createTagWithClass("p", "comments-item__text");
-  commentText.innerText = comment.text;
+  commentText.innerText = comment.comment;
   commentItem.appendChild(commentText);
 
   commentContainer.appendChild(commentItem);
@@ -81,11 +62,30 @@ function createComment(comment) {
   return commentContainer;
 }
 
-comments.forEach((comment) => {
-  commentContainer.appendChild(createComment(comment));
+function displayComments(comments) {
+  commentContainer.innerHTML = '';
+  // comments.sort((a, b) => {
+  //   b.timestamp + a.timestamp
+  // })
+  // comments.forEach((comment) => {
+  //   addCommentToPage(comment)
+  // });
+  const newComments = [...comments]
+  newComments.sort((a, b) => {
+    return a.timestamp - b.timestamp
+  })
+  newComments.forEach((comment) => {
+    console.log(comment)
+    addCommentToPage(comment)
+  })
+}
+
+function addCommentToPage(comment) {
+  const newCommentElement = createComment(comment)
+  commentContainer.prepend(newCommentElement);
   const hr = document.createElement("hr");
-  commentContainer.appendChild(hr);
-});
+  commentContainer.prepend(hr)
+}
 
 function checkErrorsInForm(form) {
   const inputs = form.querySelectorAll("input, textarea");
@@ -100,4 +100,14 @@ function checkErrorsInForm(form) {
     }
   });
   return valid;
+}
+
+
+export {
+  displayComments,
+  commentContainer,
+  addCommentForm,
+  checkErrorsInForm,
+  addCommentToPage,
+  createComment
 }

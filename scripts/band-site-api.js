@@ -1,99 +1,63 @@
-const baseURL = "https://project-1-api.herokuapp.com/"
-const API_KEY = "faead40e-7b40-4ae3-b771-67cac927598d"
-const commentDiv = document.querySelector(".comments")
-const addCommentForm = document.querySelector(".form")
+const baseURL = "https://project-1-api.herokuapp.com/";
+const API_KEY = "chancla";
 
+const isCommentsPage = document.getElementById("home-page") != null
+const isShowsPage = document.getElementById("shows-page") !== null
+
+import {displayComments, commentContainer, addCommentForm, checkErrorsInForm, addCommentToPage, createComment } from "./index-page.js"
 
 class BandSiteAPI {
-    constructor(apiKey) {
-        this.apiKey = apiKey;
-        this.baseURL = baseURL
-    }
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+    this.baseURL = baseURL;
+  }
+    
     async getComments() {
         try {
-            const reqResp = await axios.get(`${this.baseURL}comments?api_key=${this.apiKey}`)
-            const commentObjArr = reqResp.data;
-
-            commentObjArr.forEach((comment) => {
-                const commentContainer = createTagWithClass("div", "comments-container")
-                const userAvatar = createTagWithClass("div", "comments__usrAvatar")
-                commentContainer.appendChild(userAvatar)
-
-                const commentItem = createTagWithClass("div", "comments-item")
-                const commentDetails = createTagWithClass("div", "comments-item__details");
-
-                const userName = createTagWithClass("p", "comments-item__name")
-                userName.innerText = comment.name;
-                commentDetails.appendChild(userName);
-
-                const commentDate = createTagWithClass("p", "comments-item__date")
-                commentDate.innerText = comment.timestamp;
-                commentDetails.appendChild(commentDate)
-
-                commentItem.appendChild(commentDetails)
-
-                const commentText = createTagWithClass("p", "comments-item__text");
-                commentText.innerText = comment.comment;
-                commentItem.appendChild(commentText)
-                
-                commentContainer.appendChild(commentItem)
-
-                // console.log(commentContainer)
-                // will be done with a separate function
-                const hr = document.createElement("hr")
-                commentDiv.appendChild(commentContainer)
-                commentDiv.appendChild(hr)
-            }) 
-
+            const response = await axios.get(`${this.baseURL}comments?api_key=${this.apiKey}`)
+            const commentData = response.data;
+            displayComments(commentData) 
         } catch (error) {
-            console.error("Could not make API request", error)
+            console.error("Coudn't make API request", error)
         }
-        
     }
-
     async postComment(commentObj) {
         try {
-            console.log(commentObj)
-            await axios.post(`${this.baseURL}comments?api_key=${this.apiKey}`, commentObj)
-            // const newComment = reqResp.data;
-            this.getComments();
+            const response = await axios.post(`${this.baseURL}comments?api_key=${this.apiKey}`, commentObj)
 
-            // I could also do this
-            // const requestResp = await axios.post(`${this.baseURL}comments?api_key=${this.apiKey}`, commentObj)
-            //const newComment requestResp.data;
-            // this.displayComment(newComment)
+            addCommentToPage(response.data)
+            
         } catch (error) {
-            if (error.reqResp) {
-                if (error.reqResp.status === 400) {
-                    console.error("Either the name or the comment was included. Please double check before adding comment.", error)
-                } else {
-                    console.error("Error occurred while posting the comment.", error)
-                }
-            } else {
-                console.error("There was an error while posting the comment")
-            }
+            console.error("Could not post new comment ==> ", error)
         }
     }
-}
-
-addCommentForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const commentObject = {};
-    const name = event.target.name.value;
-    const comment = event.target.comment.value;
-    commentObject.name = name;
-    commentObject.comment = comment;
-
-    bandsiteAPI.postComment(commentObject)
-
-})
-
-
-function createTagWithClass(tag, className) {
-    const tagEl = document.createElement(tag);
-    tagEl.classList.add(className);
-    return tagEl;
-}
+ }
 
 const bandsiteAPI = new BandSiteAPI(API_KEY)
-bandsiteAPI.getComments()
+
+
+//if you are on the home page, 
+if (isCommentsPage) {
+    bandsiteAPI.getComments()
+
+    addCommentForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let form = event.target;
+        let isValid = checkErrorsInForm(form);
+
+        if (isValid) {
+            const commentObject = {};
+            const name = event.target.name.value;
+            const comment = event.target.comment.value;
+
+            commentObject.name = name;
+            commentObject.comment = comment;
+
+            bandsiteAPI.postComment(commentObject)
+            form.reset()
+        }
+    })
+} else {
+    console.log("You are on the shows page :)")
+}
