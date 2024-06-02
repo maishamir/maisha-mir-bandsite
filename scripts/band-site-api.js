@@ -5,7 +5,7 @@ const isCommentsPage = document.getElementById("home-page") != null
 
 import { displayComments, addCommentForm, checkErrorsInForm, addCommentToPage } from "./index-page.js"
 
-import { displayShows, addShowCardToPage } from "./build-shows-page.js";
+import { displayShows } from "./build-shows-page.js";
 
 class BandSiteAPI {
   constructor(apiKey) {

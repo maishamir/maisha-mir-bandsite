@@ -65,7 +65,6 @@ function addShowCardToPage(show) {
     showsContainer.appendChild(createShowCard(show));
     const hr = document.createElement("hr");
     showsContainer.appendChild(hr)
-    
 }
 
 export {displayShows, addShowCardToPage}
