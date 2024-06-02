@@ -2,9 +2,10 @@ const baseURL = "https://project-1-api.herokuapp.com/";
 const API_KEY = "chancla";
 
 const isCommentsPage = document.getElementById("home-page") != null
-const isShowsPage = document.getElementById("shows-page") !== null
 
-import {displayComments, commentContainer, addCommentForm, checkErrorsInForm, addCommentToPage, createComment } from "./index-page.js"
+import { displayComments, addCommentForm, checkErrorsInForm, addCommentToPage } from "./index-page.js"
+
+import { displayShows, addShowCardToPage } from "./build-shows-page.js";
 
 class BandSiteAPI {
   constructor(apiKey) {
@@ -29,6 +30,18 @@ class BandSiteAPI {
             
         } catch (error) {
             console.error("Could not post new comment ==> ", error)
+        }
+    }
+
+    async getShows() {
+        try {
+            const response = await axios.get(`${this.baseURL}showdates?api_key=${this.apiKey}`)
+            const showData = response.data;
+            console.log(showData)
+            displayShows(showData)
+
+        } catch (error) {
+            console.error("Couldn't display shows => ", error)
         }
     }
  }
@@ -59,5 +72,5 @@ if (isCommentsPage) {
         }
     })
 } else {
-    console.log("You are on the shows page :)")
+    bandsiteAPI.getShows()
 }

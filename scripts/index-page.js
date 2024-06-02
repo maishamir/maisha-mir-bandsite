@@ -7,32 +7,6 @@ function createTagWithClass(tag, className) {
 const commentContainer = document.querySelector(".comments");
 const addCommentForm = document.querySelector(".form");
 
-// export default function addNewComment(event) {
-//   event.preventDefault();
-
-//   let form = event.target;
-//   let validInputs = checkErrorsInForm(form);
-
-//   if (validInputs) {
-//     const commentObject = {};
-//     const name = event.target.name.value;
-//     const comment = event.target.comment.value;
-//     let currentDate = new Date().toLocaleDateString();
-
-//     commentObject.name = name;
-//     commentObject.date = currentDate;
-//     commentObject.text = comment;
-
-//     const newComment = createComment(commentObject);
-//     commentContainer.appendChild(newComment);
-
-//     const hr = document.createElement("hr");
-//     commentContainer.appendChild(hr);
-
-//     event.target.reset();
-//   }
-// }
-
 function createComment(comment) {
   const commentContainer = createTagWithClass("div", "comments-container");
   const userAvatar = createTagWithClass("div", "comments__usrAvatar");
@@ -64,12 +38,6 @@ function createComment(comment) {
 
 function displayComments(comments) {
   commentContainer.innerHTML = '';
-  // comments.sort((a, b) => {
-  //   b.timestamp + a.timestamp
-  // })
-  // comments.forEach((comment) => {
-  //   addCommentToPage(comment)
-  // });
   const newComments = [...comments]
   newComments.sort((a, b) => {
     return a.timestamp - b.timestamp
