@@ -1,11 +1,11 @@
 function createTagWithClass(tag, classNames) {
-    const element = document.createElement(tag);
+  const element = document.createElement(tag);
 
-    classNames.forEach(className => {
-        element.classList.add(className)
-    })
-  
-      return element;
+  classNames.forEach((className) => {
+    element.classList.add(className);
+  });
+
+  return element;
 }
 
 export default function createShowCard(show) {
@@ -20,8 +20,8 @@ export default function createShowCard(show) {
     "show-info__detail",
     "show-info__detail--date",
   ]);
-    
-    const date = new Date(show.date).toDateString()
+
+  const date = new Date(show.date).toDateString();
   dateValue.innerText = date;
   showInfo.appendChild(dateValue);
 
@@ -56,15 +56,15 @@ export default function createShowCard(show) {
 let showsContainer = document.querySelector(".show-container__shows");
 
 function displayShows(shows) {
-    shows.forEach((show) => {
-        addShowCardToPage(show)
-    });
+  shows.forEach((show) => {
+    addShowCardToPage(show);
+  });
 }
 
 function addShowCardToPage(show) {
-    showsContainer.appendChild(createShowCard(show));
-    const hr = document.createElement("hr");
-    showsContainer.appendChild(hr)
+  showsContainer.appendChild(createShowCard(show));
+  const hr = document.createElement("hr");
+  showsContainer.appendChild(hr);
 }
 
-export {displayShows, addShowCardToPage}
+export { displayShows, addShowCardToPage };

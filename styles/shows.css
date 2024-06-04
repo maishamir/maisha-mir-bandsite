@@ -20,6 +20,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -29,6 +30,7 @@ img {
 hr {
   border: 1px solid #E1E1E1;
 }
+
 .header {
   background-color: #323232;
   padding: 0 1rem;
@@ -76,6 +78,19 @@ hr {
   border-bottom: 3px solid transparent;
   transition: border-color 0.15s;
 }
+.header__item--active {
+  color: white;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid white;
+}
+@media (min-width: 768px) {
+  .header__item--active {
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: white;
+  }
+}
 @media (min-width: 768px) {
   .header__item {
     padding: 1.5rem;
@@ -86,23 +101,21 @@ hr {
     transition: text-decoration-color 0.15s;
   }
 }
-.header__item:hover {
+.header__item .header__item:hover {
   cursor: pointer;
   color: white;
   border-color: white;
 }
 @media (min-width: 768px) {
-  .header__item:hover {
+  .header__item .header__item:hover {
     text-decoration-color: white;
   }
 }
 .header__item a:active {
-  font-family: "Avenir Next";
   font-weight: 600;
 }
 .header__logo {
   color: #FFFFFF;
-  font-family: "Avenir Next";
   font-weight: 400;
   font-size: 24px;
   padding-top: 1rem;
@@ -118,7 +131,6 @@ hr {
 }
 
 html {
-  font-family: "Avenir Next";
   font-weight: normal;
   font-size: 14px;
 }
@@ -136,7 +148,6 @@ html {
 h1 {
   font-size: 1.8rem;
   color: #323232;
-  font-family: "Avenir Next";
   font-weight: 600;
 }
 @media (min-width: 768px) {
@@ -153,7 +164,6 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
-  font-family: "Avenir Next";
   font-weight: 600;
   line-height: 2.46rem;
 }
@@ -166,7 +176,6 @@ h2 {
 
 h3 {
   font-size: 1.0715rem;
-  font-family: "Avenir Next";
   font-weight: 600;
   line-height: 2rem;
 }
@@ -257,7 +266,6 @@ a {
 }
 .footer-logo {
   color: #FFFFFF;
-  font-family: "Avenir Next";
   font-weight: 400;
   font-size: 24px;
 }
@@ -318,7 +326,6 @@ a {
   }
 }
 .company__name {
-  font-family: "Avenir Next";
   font-weight: 600;
 }
 .company-cpyrght {
@@ -349,21 +356,6 @@ button:hover {
 
 section {
   padding: 1rem 2rem;
-}
-
-.header__item--active {
-  padding-bottom: 1rem;
-  border-bottom: 3px solid white;
-}
-@media (min-width: 768px) {
-  .header__item--active {
-    border-bottom: none;
-    padding: 1.5rem;
-    border: none;
-    -webkit-text-decoration: 3px underline white;
-            text-decoration: 3px underline white;
-    text-underline-offset: 1.9rem;
-  }
 }
 
 .hero {
@@ -526,8 +518,8 @@ section {
 .show:hover {
   background: #FAFAFA;
 }
-.show:active {
-  background: #E1E1E1;
+.show--active {
+  background: black;
 }
 @media (min-width: 768px) {
   .show-info {

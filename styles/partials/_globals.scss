@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -13,11 +14,7 @@ img {
 }
 
 hr {
-    border: 1px solid $mercury;
-
-    @include tablet {
-        
-    }
+  border: 1px solid $mercury;
 }
 
 .header {
@@ -64,6 +61,19 @@ hr {
     padding-bottom: 1rem;
     border-bottom: 3px solid transparent;
     transition: border-color 0.15s;
+
+    &--active {
+      color: white;
+      font-weight: 600;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid white;
+
+      @include tablet {
+        text-decoration-line: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: white;
+      }
+    }
     @include tablet {
       padding: 1.5rem;
       border: none;
@@ -71,7 +81,8 @@ hr {
       text-underline-offset: 1.9rem;
       transition: text-decoration-color 0.15s;
     }
-    &:hover {
+
+    & &:hover {
       cursor: pointer;
       color: white;
       border-color: white;
@@ -82,14 +93,12 @@ hr {
     }
 
     a:active {
-      font-family: "Avenir Next";
       font-weight: 600;
     }
   }
 
   &__logo {
     color: $white;
-    font-family: "Avenir Next";
     font-weight: 400;
     font-size: 24px;
     padding-top: 1rem;
@@ -106,7 +115,6 @@ hr {
 }
 
 html {
-  font-family: "Avenir Next";
   font-weight: normal;
   font-size: 14px;
   @include tablet {
@@ -114,16 +122,15 @@ html {
   }
 
   @include desktop {
-    font-size: 18px
+    font-size: 18px;
   }
 }
 
 // MOBILE TEXT STYLES
 
 h1 {
-  font-size: 1.8rem;  
+  font-size: 1.8rem;
   color: $bandsite-black;
-  font-family: "Avenir Next";
   font-weight: 600;
   @include tablet {
     font-size: 4.28rem;
@@ -137,7 +144,6 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
-  font-family: "Avenir Next";
   font-weight: 600;
   line-height: 2.46rem;
 
@@ -149,7 +155,7 @@ h2 {
 
 h3 {
   font-size: 1.0715rem;
-  font-family: "Avenir Next";
+
   font-weight: 600;
   line-height: 2rem;
 
@@ -168,12 +174,10 @@ p {
   }
 }
 
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 
 .footer {
   background: $bandsite-black;
@@ -237,7 +241,6 @@ a {
 
   &-logo {
     color: $white;
-    font-family: "Avenir Next";
     font-weight: 400;
     font-size: 24px;
 
@@ -295,7 +298,6 @@ a {
   }
 
   &__name {
-    font-family: "Avenir Next";
     font-weight: 600;
   }
 

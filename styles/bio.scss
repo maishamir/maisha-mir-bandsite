@@ -3,17 +3,7 @@
 @use "./partials/mixins" as *;
 
 
-.header__item--active {
-  padding-bottom: 1rem;
-    border-bottom: 3px solid white;
-    @include tablet {
-      border-bottom: none;
-      padding: 1.5rem;
-      border: none;
-      text-decoration: 3px underline white;
-      text-underline-offset: 1.9rem;
-    }
-}
+
 
 .form-section {
   padding: 1rem 1.5rem;
@@ -73,10 +63,10 @@
   }
 
   input[type="text"] {
-    height: 36px;
+    height: 2.5714rem;
 
     @include tablet {
-      height: 48px;
+      height: 3.2rem;
     }
   }
 
@@ -102,16 +92,16 @@
       margin: 0 auto;
     }
     &__avatar {
-      width: 36px;
-      height: 36px;
+      width: 2.5714rem;
+      height: 2.5714rem;
       object-fit: cover;
       border-radius: 50%;
       object-position: 20% 50%;
       margin-top: 1.25rem;
 
       @include tablet {
-        width: 48px;
-        height: 48px;
+        width: 3.2rem;
+        height: 3.2rem;
       }
     }
   }
@@ -145,14 +135,14 @@
     padding: 1rem 0;
   }
   &__usrAvatar {
-    width: 36px;
-    height: 36px;
+    width: 2.5714rem;
+    height: 2.5714rem;
     background: $mercury;
     border-radius: 50%;
 
     @include tablet {
-      width: 48px;
-      height: 48px;
+      width: 3.2rem;
+      height: 3.2rem;
     }
   }
 
